@@ -5,6 +5,8 @@ if ENV['CI']
   end
 else
   require 'simplecov'
+  require 'simplecov-cobertura'
+  SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter  
   SimpleCov.start 'rails' do
     add_filter '/coverage/'
   end
